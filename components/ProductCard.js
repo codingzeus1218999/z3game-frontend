@@ -64,8 +64,7 @@ const ProductCard = props => {
   }, [cartCount]);
 
   return (
-    <Link legacyBehavior href={`/products/${props.id}`}>
-      <a className="border rounded-md p-2 group">
+    <Link href={`/products/${props.id}`} className="border rounded-md p-2 group">
         {/* Product's image */}
         <div className="relative w-full h-32 group-hover:transform group-hover:scale-110 group-hover:ease-in-out group-hover:duration-300">
           <Image
@@ -78,26 +77,26 @@ const ProductCard = props => {
 
         {/* Name + Rating */}
         <div className="mt-2">
-          <p className="py-2 h-10 max-h-10 font-medium text-gray-600 group-hover:text-yellow-500">{props.name}</p>
+          <p className="text-xs sm:text-lg py-2 h-10 max-h-10 font-medium text-gray-600 group-hover:text-yellow-500">{props.name}</p>
           {/* <Rating rate={props?.rating?.rate} count={props?.rating?.count} /> */}
         </div>
 
         {/* Price + CTA */}
-        <div className="mt-4 flex items-center justify-between space-x-2">
+        <div className="mt-5 flex items-center justify-between space-x-2">
           <div>
             {props.onSale ?
-              <p className="text-gray-500 line-through">{formatCurrency(props.salePrice, props.currency)}</p>
+              <p className="text-xs sm:text-lg text-gray-500 line-through">{formatCurrency(props.salePrice, props.currency)}</p>
               :
               ''
             }
-            <p className="text-lg font-semibold">
+            <p className="text-sm sm:text-xl font-semibold">
               {formatCurrency(props.price, props.currency)}
             </p>
 
           </div>
           {props.onSale ?
-            <div className="px-4 py-2 inline-block text-white border border-transparent bg-yellow-500 rounded-md">
-              <p className="text-xl font-bold">
+            <div className="px-2 sm:px-4 py-2 inline-block text-white border border-transparent bg-yellow-500 rounded-md ">
+              <p className="text-sm sm:text-xl font-bold">
               -{props.saleDiscount}%
               </p>
             </div>
@@ -108,22 +107,21 @@ const ProductCard = props => {
             type="button"
             onClick={handleOnAddToCart}
             disabled={adding || props.disabled}
-            className={`mt-1 border rounded-lg py-2 px-5 text-xl hover:text-white bg-gray-100 hover:bg-gray-800 hover:border-gray-800  transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+            className={`border rounded-lg py-1 px-3 sm:px-4 sm:py-2 text-xl hover:text-white bg-gray-100 hover:bg-gray-800 hover:border-gray-800  transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
               adding
                 ? 'disabled:bg-yellow-500 disabled:border-rose-500 disabled:text-white'
                 : 'disabled:hover:bg-transparent disabled:hover:text-current disabled:hover:border-gray-200'
             }`}
           >
-            {adding ? '...' :
+            {adding ? <FontAwesomeIcon icon={['fas', 'spinner']} className="w-4 sm:w-5" /> :
             
-            <FontAwesomeIcon icon={['far', 'square-plus']} />
+            <FontAwesomeIcon icon={['far', 'square-plus']} className="w-4 sm:w-5" />
             
             
             // <Image src="/icons/add-shopping-cart.svg" alt="Logo" width={28} height={28} />
             }
           </button>
         </div>
-      </a>
     </Link>
   );
 };

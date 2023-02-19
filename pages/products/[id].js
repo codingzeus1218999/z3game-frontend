@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { toast } from 'react-hot-toast';
-import { useShoppingCart } from '@/hooks/use-shopping-cart';
+import { useShoppingCart } from 'use-shopping-cart';
 import Image from 'next/image';
 import Head from 'next/head';
 import { formatCurrency } from '@/lib/utils';
-import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline';
+import { PlusSmallIcon, MinusSmallIcon } from '@heroicons/react/24/outline';
 
 import products from 'products';
 
@@ -23,7 +23,7 @@ const Product = props => {
     toastId.current = toast.loading(
       `Adding ${qty} item${qty > 1 ? 's' : ''}...`
     );
-    addItem(props, qty);
+    addItem(props, { count: qty });
   };
 
   useEffect(() => {
@@ -88,14 +88,14 @@ const Product = props => {
                   disabled={qty <= 1}
                   className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current hover:bg-rose-100 hover:text-rose-500 rounded-md p-1"
                 >
-                  <MinusSmIcon className="w-6 h-6 flex-shrink-0" />
+                  <MinusSmallIcon className="w-6 h-6 flex-shrink-0" />
                 </button>
                 <p className="font-semibold text-xl">{qty}</p>
                 <button
                   onClick={() => setQty(prev => prev + 1)}
                   className="hover:bg-green-100 hover:text-green-500 rounded-md p-1"
                 >
-                  <PlusSmIcon className="w-6 h-6 flex-shrink-0 " />
+                  <PlusSmallIcon className="w-6 h-6 flex-shrink-0 " />
                 </button>
               </div>
 

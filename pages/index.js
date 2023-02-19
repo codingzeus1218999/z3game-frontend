@@ -7,8 +7,8 @@ export default function Home() {
   const [disabled, setDisabled] = useState(false);
 
   return (
-    <div className="container xl:max-w-screen-xl mx-auto py-12 px-2 pt-[150px] md:pt-[90px]">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+    <div className="container xl:max-w-screen-xl mx-auto py-12 px-2 pt-[150px] md:pt-[10px]">
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-5">
         {products.map(product => (
           <ProductCard
             key={product.id}
