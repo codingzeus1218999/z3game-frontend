@@ -1,4 +1,4 @@
-import { HeartIcon } from '@heroicons/react/solid';
+import { HeartIcon } from '@heroicons/react/24/solid';
 
 const Footer = () => (
   <footer className="container xl:max-w-screen-xl mx-auto p-6 mt-8 text-center">

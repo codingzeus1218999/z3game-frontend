@@ -2,16 +2,22 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
-import { useShoppingCart } from '@/hooks/use-shopping-cart';
+import { useShoppingCart } from 'use-shopping-cart';
 import { formatCurrency } from '@/lib/utils';
 import { Rating } from '@/components/index';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {fas} from '@fortawesome/free-solid-svg-icons'
+import {fab} from '@fortawesome/free-brands-svg-icons'
+import {far} from '@fortawesome/free-regular-svg-icons'
+library.add(fas,fab, far);
 
-// import the icons you need
-import {
-  faCartPlus
-} from "@fortawesome/free-solid-svg-icons";
+
+const sleep = ms => new Promise(
+  resolve => setTimeout(resolve, ms)
+);
+
 
 const ProductCard = props => {
   const { cartCount, addItem } = useShoppingCart();
@@ -19,6 +25,7 @@ const ProductCard = props => {
 
   const toastId = useRef();
   const firstRun = useRef(true);
+
 
   const handleOnAddToCart = event => {
     event.preventDefault();
@@ -34,25 +41,30 @@ const ProductCard = props => {
   };
 
   useEffect(() => {
-    if (firstRun.current) {
-      firstRun.current = false;
-      return;
-    }
+    async function fetchData() {
+      if (firstRun.current) {
+        firstRun.current = false;
+        return;
+      }
 
-    if (adding) {
-      setAdding(false);
-      toast.success(`${props.name} added`, {
-        id: toastId.current,
-      });
-    }
+      await sleep(1000);
 
-    if (typeof props.onAddEnded === 'function') {
-      props.onAddEnded();
+      if (adding) {
+        setAdding(false);
+        toast.success(`${props.name} added`, {
+          id: toastId.current,
+        });
+      }
+
+      if (typeof props.onAddEnded === 'function') {
+        props.onAddEnded();
+      }
     }
+    fetchData();
   }, [cartCount]);
 
   return (
-    <Link href={`/products/${props.id}`}>
+    <Link legacyBehavior href={`/products/${props.id}`}>
       <a className="border rounded-md p-2 group">
         {/* Product's image */}
         <div className="relative w-full h-32 group-hover:transform group-hover:scale-110 group-hover:ease-in-out group-hover:duration-300">
@@ -73,29 +85,40 @@ const ProductCard = props => {
         {/* Price + CTA */}
         <div className="mt-4 flex items-center justify-between space-x-2">
           <div>
-            <p className="text-gray-500 line-through">$45.00</p>
+            {props.onSale ?
+              <p className="text-gray-500 line-through">{formatCurrency(props.salePrice, props.currency)}</p>
+              :
+              ''
+            }
             <p className="text-lg font-semibold">
               {formatCurrency(props.price, props.currency)}
             </p>
+
           </div>
-          <div className="px-4 py-2 inline-block text-white border border-transparent bg-yellow-500 rounded-md">
-            <p className="text-xl font-bold">
-              -35%
-            </p>
-          </div>
+          {props.onSale ?
+            <div className="px-4 py-2 inline-block text-white border border-transparent bg-yellow-500 rounded-md">
+              <p className="text-xl font-bold">
+              -{props.saleDiscount}%
+              </p>
+            </div>
+            :
+            ''
+          }
           <button
             type="button"
             onClick={handleOnAddToCart}
             disabled={adding || props.disabled}
             className={`mt-1 border rounded-lg py-2 px-5 text-xl hover:text-white bg-gray-100 hover:bg-gray-800 hover:border-gray-800  transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
               adding
-                ? 'disabled:bg-rose-500 disabled:border-rose-500 disabled:text-white'
+                ? 'disabled:bg-yellow-500 disabled:border-rose-500 disabled:text-white'
                 : 'disabled:hover:bg-transparent disabled:hover:text-current disabled:hover:border-gray-200'
             }`}
           >
-            {adding ? 'Adding...' :
+            {adding ? '...' :
             
-            <FontAwesomeIcon icon={faCartPlus}/>
+            <FontAwesomeIcon icon={['far', 'square-plus']} />
+            
+            
             // <Image src="/icons/add-shopping-cart.svg" alt="Logo" width={28} height={28} />
             }
           </button>
