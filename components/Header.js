@@ -49,9 +49,9 @@ const Header = () => {
 
   return (
     
-    <header className="bg-white py-3 border-b">
+    <header className="bg-white py-3 border-b fixed top-0 w-full z-50">
 
-<div class="container max-w-screen-xl mx-auto px-4">
+    <div class="container max-w-screen-xl mx-auto px-4">
 			<div class="flex flex-wrap items-center">
 				{/* <!-- Brand --> */}
 				<div class="flex-shrink-0 mr-5">
@@ -71,10 +71,8 @@ const Header = () => {
 				{/* <!-- Actions --> */}
 				<div class="flex items-center space-x-2 ml-auto">
 					<a class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300" href="#"> 
-            
-						<span class="hidden lg:inline ml-1">
-              <FontAwesomeIcon icon={faUser} class="svg-inline--fa fa-user text-gray-400 w-5" />
-              Sign in</span>
+            <FontAwesomeIcon icon={['fas', 'user']}  className="text-gray-400 w-5"/>
+						<span class="hidden lg:inline ml-1">Sign in</span>
 					</a>
 
 					<a class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300" href="#"> 
@@ -111,36 +109,14 @@ const Header = () => {
 				</div>
 				{/* <!-- mobile-only //end  --> */}
 
-			</div>
-		</div> 
+			</div> 
+        {/* <!-- flex grid //end --> */}
+		</div>
+      {/* <!-- container //end --> */}
 
-
-
-
-
-
-
-      {/* <div className="container xl:max-w-screen-xl mx-auto p-6 flex justify-between">
-        <Logo />
-        <Link href="/cart">
-          <a className="flex items-center space-x-1 text-gray-700 hover:text-gray-900">
-            <div className="relative">
-              <ShoppingCartIcon className="w-7 h-7 flex-shrink-0" />
-            </div>
-            <p className="text-lg">
-              {formatCurrency(totalPrice)}{' '}
-              <span className="text-sm text-gray-500">({cartCount})</span>
-            </p>
-          </a>
-        </Link>
-      </div> */}
 
 
     </header>
-    */}
-
-</nav>
-
   );
 };
 
