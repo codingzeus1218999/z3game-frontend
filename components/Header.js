@@ -26,23 +26,15 @@ const Header = () => {
     }, 1000);
   };
 
-  const handleOutsideClick = (event) => {
-    console.log('Mouse clicked');
-    if (cartPreviewRef.current && !cartPreviewRef.current.contains(event.target)) {
-      
-      console.log('Mouse clicked inside');
-    } else {
-      setShowCartPreview(false);
-    }
-  };
-
   useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
+    function handler(event) {
+        if(cartPreviewRef.current && !cartPreviewRef.current?.contains(event.target)) {
+            setShowCartPreview(false);
+        }
+    }
+    window.addEventListener('mousedown', handler)
+    return () => window.removeEventListener('mousedown', handler)
+}, [])
 
 
   return (
@@ -98,7 +90,7 @@ const Header = () => {
             </a>
           </div>
 				</div>
-        {showCartPreview && <div onMouseLeave={handleMouseLeave} ><CartPreview ref={cartPreviewRef}  /></div>}
+        {showCartPreview && <div onMouseLeave={handleMouseLeave} ref={cartPreviewRef} ><CartPreview   /></div>}
 				{/* <!-- Actions .//end --> */}
 
 			</div> 
