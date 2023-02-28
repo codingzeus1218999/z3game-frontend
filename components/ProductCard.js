@@ -5,13 +5,8 @@ import { toast } from 'react-hot-toast';
 import { useShoppingCart } from 'use-shopping-cart';
 import { formatCurrency } from '@/lib/utils';
 import { Rating } from '@/components/index';
+import { PlusIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {fas} from '@fortawesome/free-solid-svg-icons'
-import {fab} from '@fortawesome/free-brands-svg-icons'
-import {far} from '@fortawesome/free-regular-svg-icons'
-library.add(fas,fab, far);
 
 
 const sleep = ms => new Promise(
@@ -64,17 +59,29 @@ const ProductCard = props => {
   }, [cartCount]);
 
   return (
-    <Link href={`/products/${props.id}`} className="border rounded-md p-2 group">
+    <Link href={`/products/${props.friendlyURL}`} className="border rounded-md p-2 group">
+      <div className="relative w-full h-32 ">
         {/* Product's image */}
-        <div className="relative w-full h-32 group-hover:transform group-hover:scale-110 group-hover:ease-in-out group-hover:duration-300">
-          <Image
-            src={props.image}
-            alt={props.name}
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
 
+          {props.onSale ?
+            <span className="text-center z-10 relative inline-block  py-1 w-[50px] -my-1 -mx-1 border-2 text-sm font-bold bg-red-600 border-white  text-white rounded-full left-3 top-5">
+            -{props.saleDiscount}%
+          </span>
+            :
+            ''
+          }
+        <div className={`relative ${props.onSale ? '-my-6' : ''} w-full h-32 group-hover:transform group-hover:scale-110 group-hover:ease-in-out group-hover:duration-300`}>
+
+          <Image
+            src={props.imgName}
+            alt={props.name}
+            fill
+            style={{ objectFit: 'contain' }}
+            className="z-0"
+          />
+          
+        </div>
+        </div>
         {/* Name + Rating */}
         <div className="mt-2">
           <p className="text-xs sm:text-lg py-2 h-10 max-h-10 font-medium text-gray-600 group-hover:text-yellow-500">{props.name}</p>
@@ -85,43 +92,35 @@ const ProductCard = props => {
         <div className="mt-5 flex items-center justify-between space-x-2">
           <div>
             {props.onSale ?
-              <p className="text-xs sm:text-lg text-gray-500 line-through">{formatCurrency(props.salePrice, props.currency)}</p>
+              <p className="text-xs sm:text-sm font-semibold text-gray-500 line-through">{formatCurrency(props.salePrice, props.currency)}</p>
               :
               ''
             }
-            <p className="text-sm sm:text-xl font-semibold">
+            <p className="animate-shake text-sm sm:text-xl font-heading font-bold text-gray-700">
               {formatCurrency(props.price, props.currency)}
             </p>
 
           </div>
-          {props.onSale ?
-            <div className="px-2 sm:px-4 py-2 inline-block text-white border border-transparent bg-yellow-500 rounded-md ">
-              <p className="text-sm sm:text-xl font-bold">
-              -{props.saleDiscount}%
-              </p>
-            </div>
-            :
-            ''
-          }
           <button
             type="button"
             onClick={handleOnAddToCart}
             disabled={adding || props.disabled}
-            className={`border rounded-lg py-1 px-3 sm:px-4 sm:py-2 text-xl hover:text-white bg-gray-100 hover:bg-gray-800 hover:border-gray-800  transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+            className={`border rounded-lg py-2 px-2 sm:px-3 sm:py-2 text-xl  hover:border-gray-800  transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
               adding
                 ? 'disabled:bg-yellow-500 disabled:border-rose-500 disabled:text-white'
                 : 'disabled:hover:bg-transparent disabled:hover:text-current disabled:hover:border-gray-200'
             }`}
           >
-            {adding ? <FontAwesomeIcon icon={['fas', 'spinner']} className="w-4 sm:w-5" /> :
+            {adding ? <ArrowPathIcon className="w-4 sm:w-6" /> :
             
-            <FontAwesomeIcon icon={['far', 'square-plus']} className="w-4 sm:w-5" />
+            <PlusIcon className="w-4 sm:w-6" />
             
             
             // <Image src="/icons/add-shopping-cart.svg" alt="Logo" width={28} height={28} />
             }
           </button>
         </div>
+
     </Link>
   );
 };

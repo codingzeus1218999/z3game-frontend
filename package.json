@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce-nextjs-stripe-checkout",
+  "name": "z3g-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.19",
     "@heroicons/react": "^2.0.16",
-    "@stripe/stripe-js": "^1.46.0",
     "axios": "^0.21.1",
     "canvas-confetti": "^1.4.0",
     "micro": "^9.3.4",
@@ -23,11 +22,12 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.0",
+    "swr": "^2.0.4",
     "use-shopping-cart": "^3.1.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4"
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
   }
 }

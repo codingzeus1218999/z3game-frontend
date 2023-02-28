@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { useShoppingCart } from 'use-shopping-cart';
 import axios from 'axios';
 import { formatCurrency } from '@/lib/utils';
-import getStripe from '@/lib/get-stripe';
+
 import {
   XCircleIcon,
   XMarkIcon,
@@ -29,9 +29,8 @@ const Cart = () => {
       })),
     });
 
-    // Redirect to checkout
-    const stripe = await getStripe();
-    await stripe.redirectToCheckout({ sessionId: id });
+    // Redirect to checkout TODO
+    
   };
 
   return <>
@@ -82,8 +81,8 @@ const Cart = () => {
                   <Image
                     src={product.image}
                     alt={product.name}
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <p className="font-semibold text-xl group-hover:underline">

@@ -7,7 +7,7 @@ import Head from 'next/head';
 import { formatCurrency } from '@/lib/utils';
 import { PlusSmallIcon, MinusSmallIcon } from '@heroicons/react/24/outline';
 
-import products from 'products';
+import { loadFeaturedProducts, retrieveProductsByFrientlyURL } from '../../lib/encapsulated-api'
 
 const Product = props => {
   const router = useRouter();
@@ -29,7 +29,10 @@ const Product = props => {
   useEffect(() => {
     if (firstRun.current) {
       firstRun.current = false;
+      console.log('first run');
       return;
+    } else {
+      console.log('not first run');
     }
 
     setAdding(false);
@@ -56,7 +59,7 @@ const Product = props => {
           {/* Product's image */}
           <div className="relative w-72 h-72 sm:w-96 sm:h-96">
             <Image
-              src={props.image}
+              src={props.imgName}
               alt={props.name}
               layout="fill"
               objectFit="contain"
@@ -117,10 +120,14 @@ const Product = props => {
 };
 
 export async function getStaticPaths() {
+
+  const products = await loadFeaturedProducts();
+
   return {
+    
     // Existing posts are rendered to HTML at build time
-    paths: Object.keys(products)?.map(id => ({
-      params: { id },
+    paths: Object.keys(products)?.map(friendlyURL => ({
+      params: { friendlyURL },
     })),
     // Enable statically generating additional pages
     fallback: true,
@@ -129,14 +136,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
-    const props = products?.find(product => product.id === params.id) ?? {};
+    const props = await retrieveProductsByFrientlyURL(params.friendlyURL);
 
     return {
       props,
       // Next.js will attempt to re-generate the page:
       // - When a request comes in
-      // - At most once every second
-      revalidate: 1, // In seconds
+      // - At most once 10 seconds
+      revalidate: 10, // In seconds
     };
   } catch (error) {
     return { notFound: true };

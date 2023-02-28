@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { ProductCard } from '@/components/index';
 
-import products from 'products';
+import { loadFeaturedProducts } from '../lib/encapsulated-api'
 
-export default function Home() {
+export default function Home({ products }) {
   const [disabled, setDisabled] = useState(false);
 
   return (
@@ -101,4 +101,15 @@ export default function Home() {
 
     </div>
   );
+}
+
+
+export async function getStaticProps() {
+  
+  const products = await loadFeaturedProducts();
+
+  return {
+    props: { products},
+    revalidate: 10,
+  }
 }
