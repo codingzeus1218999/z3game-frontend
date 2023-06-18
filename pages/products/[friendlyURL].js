@@ -9,6 +9,10 @@ import { PlusSmallIcon, MinusSmallIcon } from '@heroicons/react/24/outline';
 
 import { loadFeaturedProducts, retrieveProductsByFrientlyURL } from '../../lib/encapsulated-api'
 
+const sleep = ms => new Promise(
+  resolve => setTimeout(resolve, ms)
+);
+
 const Product = props => {
   const router = useRouter();
   const { cartCount, addItem } = useShoppingCart();
@@ -27,19 +31,27 @@ const Product = props => {
   };
 
   useEffect(() => {
-    if (firstRun.current) {
-      firstRun.current = false;
-      console.log('first run');
-      return;
-    } else {
-      console.log('not first run');
-    }
+    async function fetchData() {
+      if (firstRun.current) {
+        firstRun.current = false;
+        console.log('first run');
+        return;
+      } else {
+        console.log('not first run');
+      }
 
-    setAdding(false);
-    toast.success(`${qty} ${props.name} added`, {
-      id: toastId.current,
-    });
-    setQty(1);
+      // this await is just to simulate back-end query
+      await sleep(1000);
+
+      if(adding) {
+        setAdding(false);
+        toast.success(`${qty} ${props.name} added`, {
+          id: toastId.current,
+        });
+        setQty(1);
+      }
+    }
+    fetchData();
   }, [cartCount]);
 
   return router.isFallback ? (

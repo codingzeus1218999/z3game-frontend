@@ -42,6 +42,7 @@ const ProductCard = props => {
         return;
       }
 
+      // this await is just to simulate back-end query
       await sleep(1000);
 
       if (adding) {
