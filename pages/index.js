@@ -7,7 +7,7 @@ export default function Home({ products }) {
   const [disabled, setDisabled] = useState(false);
 
   return (
-    <div className="container xl:max-w-screen-xl mx-auto py-12 px-2 pt-[150px] md:pt-[10px]">
+    <div className="container xl:max-w-screen-xl mx-auto py-12 px-2 pt-[120px]">
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-5">
         {products.map(product => (
           <ProductCard

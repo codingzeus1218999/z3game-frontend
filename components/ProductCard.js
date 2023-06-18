@@ -60,7 +60,7 @@ const ProductCard = props => {
 
   return (
     <Link href={`/products/${props.friendlyURL}`} className="border rounded-md p-2 group">
-      <div className="relative w-full h-32 ">
+      <div className="relative w-full h-36 ">
         {/* Product's image */}
 
           {props.onSale ?
@@ -70,7 +70,7 @@ const ProductCard = props => {
             :
             ''
           }
-        <div className={`relative ${props.onSale ? '-my-6' : ''} w-full h-32 group-hover:transform group-hover:scale-110 group-hover:ease-in-out group-hover:duration-300`}>
+        <div className={`relative ${props.onSale ? '-my-6' : ''} w-full h-36 group-hover:transform group-hover:scale-110 group-hover:ease-in-out group-hover:duration-300`}>
 
           <Image
             src={props.imgName}
