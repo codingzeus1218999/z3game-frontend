@@ -81,7 +81,7 @@ const Header = () => {
 
   return (
     <>
-    <header className="py-3 border-b fixed top-0 w-full z-50 bg-[#333333]">
+    <header className="py-3 border-b fixed top-0 w-full z-20 bg-[#333333]">
 
     <div class="container max-w-screen-xl mx-auto px-4">
 			<div class="flex flex-wrap items-center">
@@ -107,18 +107,18 @@ const Header = () => {
 				{/* <!-- mobile-only //end  --> */}
 
 				{/* <!-- Brand --> */}
-				<div class="flex-shrink-0 mr-5 px-2">
+				<div class="flex-shrink-0 mr-5 px-2 z-30">
           <Logo />
 				</div>
 				{/* <!-- Brand .//end --> */}
 
         {/* <!-- new menu --> */}
 
-          <div class={(showSearch ? "bg-[#333333] md:bg-transparent	" : "") + " min-h-fit h-12 absolute w-full lg:w-[735px] left-1/2 -translate-x-1/2 top-0 lg:flex lg:flex-col items-center z-10 transition-all"}>
-            <div class="top-5 relative w-full lg:h-16">
+          <div class={(showSearch ? " z-30 md:z-20	" : "") + " top-1.5 lg:top-auto absolute w-full lg:w-[735px] left-1/2 -translate-x-1/2 lg:flex lg:flex-col transition-all"}>
+            <div class="flex items-center w-full">
 
-              <div class="flex-col-reverse flex lg:flex-row z-10 w-full">
-                  <div className={' text-white text-xs items-center justify-center translate-y-6 lg:-translate-y-1 opacity-70 bg-[#333333] lg:text-base lg:opacity-100 lg:mt-0  flex md:' + (showSearch ? ' lg:hidden' : '') + " " + (isScrolled ? 'lg:flex hidden' : '')} >
+              <div class="flex-col-reverse flex lg:flex-row w-full ">
+                  <div className={'mt-2 h-6 lg:mt-0 lg:h-auto text-white text-xs items-center justify-center opacity-70 bg-[#333333] lg:text-base lg:opacity-100 lg:mt-0  flex md:' + (showSearch ? ' lg:hidden' : '') + " " + (isScrolled ? 'lg:flex hidden' : '')} >
                     
                     <div className='pl-2'>
                       <a href="#" className="group">
@@ -183,18 +183,18 @@ const Header = () => {
                     </div>
                   </div>
 
-                <div className={(showSearch ? "w-full" : "") + " flex px-2 justify-center"}>
+                <div className={(showSearch ? "w-full" : "") + " flex px-2 justify-center bg-[#333333] "}>
 
                       <div className={(showSearch ? "w-full" : "") + " pl-2 pr-1 flex text-white justify-center"}>
-                          <div className={(showSearch ? 'w-[310px] lg:w-[670px]' : "w-[50px]") + " flex p-3.5 h-[50px] -my-4 -mx-4 text-sm font-bold bg-orange-600 rounded-full left-3"}>
-                            <div className={(showSearch ? "w-full" : "hidden") + " flex"}>
+                          <div className={(showSearch ? 'w-[310px] lg:w-[670px]' : "w-[50px] justify-center") + " items-center h-[50px]  flex -mx-4 text-sm font-bold bg-orange-600 rounded-full "}>
+                            <div className={(showSearch ? "w-[88%] lg:w-[94%]" : "hidden") + " flex px-2"}>
                               <input type="text" className="focus:outline-none w-full text-white bg-orange-600"></input>
                             </div>
                             <div className="cursor-pointer lg:hover:scale-125 hover:ease-in-out hover:duration-300">
                             <MagnifyingGlassIcon className="w-6 " onClick={toggleSearch}/>
                             </div>
                           </div>
-                          <div onClick={toggleSearch} className={(showSearch ? "cursor-pointer hover:text-orange-600	text-lg -my-4 translate-x-6 items-center" : "hidden") + " flex"}> X</div>
+                          <div onClick={toggleSearch} className={(showSearch ? "cursor-pointer hover:text-orange-600	text-lg translate-x-6 items-center" : "hidden") + " flex"}> X</div>
 
 
                     </div>
@@ -219,12 +219,12 @@ const Header = () => {
 
         
 				{/* <!-- Actions --> */}
-				<div class="flex items-center space-x-4 ml-auto" >
+				<div class="z-20 flex items-center space-x-4 ml-auto" >
 					<button  type="button" data-collapse-toggle="user-dropdown"  aria-controls="mobile-menu-3" aria-expanded="false"> 
             <UserCircleIcon className="w-7 text-white hover:text-gray-300 "/>
 					</button>
 
-          <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+          <div class="hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
             <div class="px-4 py-3">
               <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
               <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
@@ -247,7 +247,7 @@ const Header = () => {
 
 
 
-          <div class="relative items-center space-x-2 ml-auto" onClick={toggleCartPreview} >
+          <div class="relative items-center space-x-2 ml-auto " onClick={toggleCartPreview} >
             <a href="#" class=""> 
               <div>
                 <ShoppingCartIcon className=" w-7 h-9 text-white hover:text-gray-300 " />

@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }) {
         <title>
           Z3 games - Simplificando sua diversão!
         </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></meta>
         <meta
           name="description"
           content="A Zero3Games é especializada em cartões pré-pagos para os consoles PlayStation, Xbox e Nintendo além de oferecer cartões para jogos de PC como Steam, Battle.Net, Ongame, Level-Up e serviços como: NETFLIX, Google Play, Uber, IMVU e mais"
