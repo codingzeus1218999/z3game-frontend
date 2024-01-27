@@ -60,8 +60,8 @@ const ProductCard = props => {
   }, [cartCount]);
 
   return (
-    <Link href={`/products/${props.friendlyURL}`} className="border rounded-md p-2 group">
-      <div className="relative w-full h-36 ">
+    <Link href={`/products/${props.friendlyURL}`} className="border rounded-2xl drop-shadow-lg p-2 group bg-white">
+      <div className="relative w-full h-36">
         {/* Product's image */}
 
           {props.onSale ?
