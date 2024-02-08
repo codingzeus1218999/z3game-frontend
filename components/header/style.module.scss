@@ -27,6 +27,9 @@
       & .crossIcon {
         @apply absolute -right-8 cursor-pointer;
       }
+      & .removeSearchStrIcon {
+        @apply absolute w-7 text-white right-4 cursor-pointer;
+      }
     }
   }
 }

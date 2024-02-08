@@ -11,6 +11,7 @@ import { useShoppingCart } from "use-shopping-cart";
 import { formatCurrency } from "@/lib/utils";
 import CartPreview from "../CartPreview";
 import {
+  XCircleIcon,
   GiftIcon,
   DevicePhoneMobileIcon,
   ComputerDesktopIcon,
@@ -56,6 +57,7 @@ const searchInputAnimation = {
 const Header = () => {
   const [isMagnifyHover, setIsMagnifyHover] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
+  const [searchStr, setSearchStr] = useState("");
   const searchInputRef = useRef(null);
 
   const onMouseEnterMagnifyContainer = () => setIsMagnifyHover(true);
@@ -99,6 +101,8 @@ const Header = () => {
             className={styles.searchInput}
             {...searchInputAnimation}
             ref={searchInputRef}
+            value={searchStr}
+            onChange={({ target }) => setSearchStr(target.value)}
           ></motion.input>
           <motion.div
             {...iconAnimation}
@@ -112,6 +116,15 @@ const Header = () => {
           >
             <XMarkIcon className="w-5" />
           </motion.div>
+          <XCircleIcon
+            onClick={() => {
+              setSearchStr("");
+              searchInputRef.current.focus();
+            }}
+            className={`${styles.removeSearchStrIcon} ${
+              searchStr ? "block" : "hidden"
+            }`}
+          />
         </div>
         <div className={styles.headerRight}>
           <Link href="/">
