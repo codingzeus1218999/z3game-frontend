@@ -1,4 +1,4 @@
-import Header from "./header/Header";
+import Header from "./header";
 export { default as Footer } from "./Footer";
 export { default as Logo } from "./Logo";
 export { default as Rating } from "./Rating";

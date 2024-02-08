@@ -1,0 +1,32 @@
+.headerContainer {
+  @apply bg-header-bg py-2 sticky top-0 z-50;
+  & .header {
+    @apply flex justify-between items-center container mx-auto px-4;
+    & .headerRight {
+      @apply flex items-center gap-4;
+    }
+    & .productMenu {
+      @apply gap-4 h-[50px] relative rounded-[25px] pl-[25px] pr-[75px] flex items-center;
+      & .menuItem {
+        width: 100px;
+        height: 40px;
+        background-color: aquamarine;
+      }
+      & .magnifyContainer {
+        @apply w-[50px] h-[50px] rounded-full  cursor-pointer flex justify-center items-center absolute right-0;
+        background: var(--fire-gradient);
+      }
+      & .searchInput {
+        @apply absolute right-0 h-full rounded-[25px] px-[25px] py-1 text-white w-full;
+        background: var(--fire-gradient);
+        transform-origin: right;
+        &:focus-visible {
+          @apply outline-none;
+        }
+      }
+      & .crossIcon {
+        @apply absolute -right-8 cursor-pointer;
+      }
+    }
+  }
+}

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --fire-gradient: linear-gradient(10deg, #ff8000, transparent) #ff4020;
+}
