@@ -11,6 +11,7 @@ module.exports = {
         primary: "#ff5400",
         "body-bg": "#fafafc",
         "header-bg": "#333333",
+        placeholder: "#ffb486",
       },
     },
   },

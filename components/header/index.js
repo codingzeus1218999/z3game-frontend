@@ -7,25 +7,14 @@ import images from "public/images";
 import variables from "@/styles/variables.module.scss";
 import styles from "./style.module.scss";
 
-import { useShoppingCart } from "use-shopping-cart";
-import { formatCurrency } from "@/lib/utils";
-import CartPreview from "../CartPreview";
 import {
-  XCircleIcon,
-  GiftIcon,
-  DevicePhoneMobileIcon,
-  ComputerDesktopIcon,
-  ChevronDownIcon,
+  BackspaceIcon,
   UserCircleIcon,
   ShoppingCartIcon,
-  Bars4Icon,
-  HeartIcon,
   MagnifyingGlassIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import PlaystationIcon from "../PlaystationIcon";
-import XboxIcon from "../XboxIcon";
-import NintendoIcon from "../NintendoIcon";
+import MenuItem from "../menuItem";
 
 const iconAnimation = {
   initial: { color: "#ffffff" },
@@ -54,6 +43,13 @@ const searchInputAnimation = {
   },
 };
 
+const menu = [
+  { image: images.IconComputerDesktop, title: "PC" },
+  { image: images.IconPlaystation, title: "Playstatiion" },
+  { image: images.IconXBox, title: "Xbox" },
+  { image: images.IconNintendo, title: "Nintendo" },
+];
+
 const Header = () => {
   const [isMagnifyHover, setIsMagnifyHover] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
@@ -77,12 +73,12 @@ const Header = () => {
           </Link>
         </div>
         <div className={styles.productMenu}>
-          <div className={styles.menuItem}></div>
-          <div className={styles.menuItem}></div>
-          <div className={styles.menuItem}></div>
-          <div className={styles.menuItem}></div>
-          <div className={styles.menuItem}></div>
-          <div className={styles.menuItem}></div>
+          {menu.map((m, _idx) => (
+            <div key={_idx}>
+              <MenuItem {...m} />
+            </div>
+          ))}
+
           <div
             className={styles.magnifyContainer}
             onMouseEnter={onMouseEnterMagnifyContainer}
@@ -103,6 +99,7 @@ const Header = () => {
             ref={searchInputRef}
             value={searchStr}
             onChange={({ target }) => setSearchStr(target.value)}
+            placeholder="Minecraft, RPG, multiplayer..."
           ></motion.input>
           <motion.div
             {...iconAnimation}
@@ -116,7 +113,7 @@ const Header = () => {
           >
             <XMarkIcon className="w-5" />
           </motion.div>
-          <XCircleIcon
+          <BackspaceIcon
             onClick={() => {
               setSearchStr("");
               searchInputRef.current.focus();

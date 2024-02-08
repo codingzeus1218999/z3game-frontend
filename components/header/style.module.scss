@@ -7,11 +7,6 @@
     }
     & .productMenu {
       @apply gap-4 h-[50px] relative rounded-[25px] pl-[25px] pr-[75px] flex items-center;
-      & .menuItem {
-        width: 100px;
-        height: 40px;
-        background-color: aquamarine;
-      }
       & .magnifyContainer {
         @apply w-[50px] h-[50px] rounded-full  cursor-pointer flex justify-center items-center absolute right-0;
         background: var(--fire-gradient);
@@ -23,12 +18,15 @@
         &:focus-visible {
           @apply outline-none;
         }
+        &::placeholder {
+          @apply text-placeholder;
+        }
       }
       & .crossIcon {
         @apply absolute -right-8 cursor-pointer;
       }
       & .removeSearchStrIcon {
-        @apply absolute w-7 text-white right-4 cursor-pointer;
+        @apply absolute w-6 text-white right-4 cursor-pointer;
       }
     }
   }
