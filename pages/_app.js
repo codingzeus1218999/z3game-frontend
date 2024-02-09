@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { CartProvider } from "use-shopping-cart";
-import { Toaster } from "react-hot-toast";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -24,16 +22,13 @@ function MyApp({ Component, pageProps }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <CartProvider>
-        <div className="min-h-screen flex flex-col bg-body-bg">
-          <Header />
-          <main className="flex-grow">
-            <Component {...pageProps} />
-          </main>
-          <Footer />
-        </div>
-      </CartProvider>
-      <Toaster />
+      <div className="min-h-screen flex flex-col bg-body-bg">
+        <Header />
+        <main className="flex-grow">
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

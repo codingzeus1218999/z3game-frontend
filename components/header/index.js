@@ -89,6 +89,9 @@ const Header = () => {
   }, [activeMenu]);
 
   useEffect(() => {
+    subMenuRef.current.style.top = `${
+      productMenuMobileRef.current.clientHeight + 58
+    }px`;
     window.addEventListener("resize", (e) => {
       subMenuRef.current.style.top = `${
         productMenuMobileRef.current.clientHeight + 58
