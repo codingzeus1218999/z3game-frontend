@@ -1,0 +1,9 @@
+.container {
+  @apply flex gap-2 items-center text-white p-2 cursor-pointer;
+  & .chevrondown {
+    @apply text-white w-4 opacity-40 transition-all;
+  }
+  &:hover .chevrondown {
+    @apply opacity-100;
+  }
+}
