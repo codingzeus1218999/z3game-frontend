@@ -49,6 +49,8 @@ const menu = [
   { image: images.IconPlaystation, title: "Playstatiion" },
   { image: images.IconXBox, title: "Xbox" },
   { image: images.IconNintendo, title: "Nintendo" },
+  { image: images.IconDevicePhoneMobile, title: "Mobile" },
+  { image: images.IconGift, title: "Gift" },
 ];
 
 const subMenu = [
@@ -66,6 +68,8 @@ const subMenu = [
   ],
   ["xbox game1", "xbox game2", "xbox game3", "xbox game4"],
   ["nintendo game1", "nintendo game2", "nintendo game3", "nintendo game4"],
+  ["mobile game1", "mobile game2", "mobile game3", "mobile game4"],
+  ["Gift 1", "Gift 2", "Gift 3", "Gift 4"],
 ];
 
 const Header = () => {
@@ -76,6 +80,7 @@ const Header = () => {
   const searchInputRef = useRef(null);
   const productMenuRef = useRef(null);
   const productMenuMobileRef = useRef(null);
+  const subMenuRef = useRef(null);
 
   useEffect(() => {
     if (activeMenu !== null) {
@@ -84,6 +89,11 @@ const Header = () => {
   }, [activeMenu]);
 
   useEffect(() => {
+    window.addEventListener("resize", (e) => {
+      subMenuRef.current.style.top = `${
+        productMenuMobileRef.current.clientHeight + 58
+      }px`;
+    });
     document.addEventListener("click", (e) => {
       if (
         !productMenuRef.current.contains(e.srcElement) &&
@@ -106,18 +116,14 @@ const Header = () => {
     <header className={styles.headerContainer}>
       <div className={styles.headerSubContainer}>
         <div className={styles.header}>
-          <div
-            className={`${styles.logoContainer} ${
-              isOpenSearch ? "hidden md:block" : "block"
-            } `}
-          >
+          <div className={`${isOpenSearch ? "hidden lg:block" : "block"}`}>
             <Link href="/">
               <Image src={images.Logo} alt="logo" width={40} height={40} />
             </Link>
           </div>
           <div
             className={`${styles.productMenu} ${
-              isOpenSearch ? "w-[calc(100%-30px)] md:w-fit" : "w-fit"
+              isOpenSearch ? "w-[calc(100%-30px)] lg:w-fit" : "w-fit"
             }`}
             ref={productMenuRef}
           >
@@ -127,7 +133,7 @@ const Header = () => {
                 onClick={() => {
                   setActiveMenu(_idx);
                 }}
-                className="hidden md:block"
+                className="hidden lg:block"
               >
                 <MenuItem {...m} isActive={_idx === activeMenu} />
               </div>
@@ -181,6 +187,7 @@ const Header = () => {
               className={`${styles.subMenu} ${
                 activeMenu === null ? "" : styles.active
               }`}
+              ref={subMenuRef}
             >
               {activeMenu !== null &&
                 subMenu[activeMenu].map((s, _idx) => (
@@ -192,7 +199,7 @@ const Header = () => {
           </div>
           <div
             className={`${styles.headerRight} ${
-              isOpenSearch ? "hidden md:flex" : "flex"
+              isOpenSearch ? "hidden lg:flex" : "flex"
             } `}
           >
             <Link href="/">
