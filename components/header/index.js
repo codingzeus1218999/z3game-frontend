@@ -15,6 +15,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import MenuItem from "../menuItem";
+import MenuItemMobile from "../menuItemMobile";
 
 const iconAnimation = {
   initial: { color: "#ffffff" },
@@ -74,6 +75,7 @@ const Header = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const searchInputRef = useRef(null);
   const productMenuRef = useRef(null);
+  const productMenuMobileRef = useRef(null);
 
   useEffect(() => {
     if (activeMenu !== null) {
@@ -83,7 +85,11 @@ const Header = () => {
 
   useEffect(() => {
     document.addEventListener("click", (e) => {
-      if (!productMenuRef.current.contains(e.srcElement)) setActiveMenu(null);
+      if (
+        !productMenuRef.current.contains(e.srcElement) &&
+        !productMenuMobileRef.current.contains(e.srcElement)
+      )
+        setActiveMenu(null);
     });
   }, []);
 
@@ -98,107 +104,121 @@ const Header = () => {
 
   return (
     <header className={styles.headerContainer}>
-      <div className={styles.header}>
-        <div
-          className={`${styles.logoContainer} ${
-            isOpenSearch ? "hidden md:block" : "block"
-          } `}
-        >
-          <Link href="/">
-            <Image src={images.Logo} alt="logo" width={40} height={40} />
-          </Link>
-        </div>
-        <div
-          className={`${styles.productMenu} ${
-            isOpenSearch ? "w-[calc(100%-20px)] md:w-fit" : "w-fit"
-          }`}
-          ref={productMenuRef}
-        >
-          {menu.map((m, _idx) => (
+      <div className={styles.headerSubContainer}>
+        <div className={styles.header}>
+          <div
+            className={`${styles.logoContainer} ${
+              isOpenSearch ? "hidden md:block" : "block"
+            } `}
+          >
+            <Link href="/">
+              <Image src={images.Logo} alt="logo" width={40} height={40} />
+            </Link>
+          </div>
+          <div
+            className={`${styles.productMenu} ${
+              isOpenSearch ? "w-[calc(100%-30px)] md:w-fit" : "w-fit"
+            }`}
+            ref={productMenuRef}
+          >
+            {menu.map((m, _idx) => (
+              <div
+                key={_idx}
+                onClick={() => {
+                  setActiveMenu(_idx);
+                }}
+                className="hidden md:block"
+              >
+                <MenuItem {...m} isActive={_idx === activeMenu} />
+              </div>
+            ))}
             <div
-              key={_idx}
-              onClick={() => {
-                setActiveMenu(_idx);
-              }}
-              className="hidden md:block"
+              className={`${styles.magnifyContainer} ${
+                activeMenu !== null ? styles.active : ""
+              }`}
+              onMouseEnter={onMouseEnterMagnifyContainer}
+              onMouseLeave={onMouseLeaveMagnifyContainer}
+              onClick={onClickMagnify}
             >
-              <MenuItem {...m} isActive={_idx === activeMenu} />
+              <motion.div
+                animate={isMagnifyHover ? "hover" : "init"}
+                {...magnifyIconAnimation}
+              >
+                <MagnifyingGlassIcon className="w-5 text-white" />
+              </motion.div>
             </div>
-          ))}
-          <div
-            className={`${styles.magnifyContainer} ${
-              activeMenu !== null ? styles.active : ""
-            }`}
-            onMouseEnter={onMouseEnterMagnifyContainer}
-            onMouseLeave={onMouseLeaveMagnifyContainer}
-            onClick={onClickMagnify}
-          >
+            <motion.input
+              animate={isOpenSearch ? "show" : "hidden"}
+              className={styles.searchInput}
+              {...searchInputAnimation}
+              ref={searchInputRef}
+              value={searchStr}
+              onChange={({ target }) => setSearchStr(target.value)}
+              placeholder="Minecraft, RPG, multiplayer..."
+            ></motion.input>
             <motion.div
-              animate={isMagnifyHover ? "hover" : "init"}
-              {...magnifyIconAnimation}
+              {...iconAnimation}
+              animate={
+                isOpenSearch
+                  ? { opacity: 1, display: "block" }
+                  : { opacity: 0, transitionEnd: { display: "none" } }
+              }
+              className={styles.crossIcon}
+              onClick={onClickCloseSearch}
             >
-              <MagnifyingGlassIcon className="w-5 text-white" />
+              <XMarkIcon className="w-5" />
             </motion.div>
+            <BackspaceIcon
+              onClick={() => {
+                setSearchStr("");
+                searchInputRef.current.focus();
+              }}
+              className={`${styles.removeSearchStrIcon} ${
+                searchStr && isOpenSearch ? "block" : "hidden"
+              }`}
+            />
+            <div
+              className={`${styles.subMenu} ${
+                activeMenu === null ? "" : styles.active
+              }`}
+            >
+              {activeMenu !== null &&
+                subMenu[activeMenu].map((s, _idx) => (
+                  <div key={_idx} className={styles.item}>
+                    {s}
+                  </div>
+                ))}
+            </div>
           </div>
-          <motion.input
-            animate={isOpenSearch ? "show" : "hidden"}
-            className={styles.searchInput}
-            {...searchInputAnimation}
-            ref={searchInputRef}
-            value={searchStr}
-            onChange={({ target }) => setSearchStr(target.value)}
-            placeholder="Minecraft, RPG, multiplayer..."
-          ></motion.input>
-          <motion.div
-            {...iconAnimation}
-            animate={
-              isOpenSearch
-                ? { opacity: 1, display: "block" }
-                : { opacity: 0, transitionEnd: { display: "none" } }
-            }
-            className={styles.crossIcon}
-            onClick={onClickCloseSearch}
-          >
-            <XMarkIcon className="w-5" />
-          </motion.div>
-          <BackspaceIcon
-            onClick={() => {
-              setSearchStr("");
-              searchInputRef.current.focus();
-            }}
-            className={`${styles.removeSearchStrIcon} ${
-              searchStr && isOpenSearch ? "block" : "hidden"
-            }`}
-          />
           <div
-            className={`${styles.subMenu} ${
-              activeMenu === null ? "" : styles.active
-            }`}
+            className={`${styles.headerRight} ${
+              isOpenSearch ? "hidden md:flex" : "flex"
+            } `}
           >
-            {activeMenu !== null &&
-              subMenu[activeMenu].map((s, _idx) => (
-                <div key={_idx} className={styles.item}>
-                  {s}
-                </div>
-              ))}
+            <Link href="/">
+              <motion.div {...iconAnimation}>
+                <ShoppingCartIcon className="w-7" />
+              </motion.div>
+            </Link>
+            <Link href="/">
+              <motion.div {...iconAnimation}>
+                <UserCircleIcon className="w-7" />
+              </motion.div>
+            </Link>
           </div>
         </div>
-        <div
-          className={`${styles.headerRight} ${
-            isOpenSearch ? "hidden md:flex" : "flex"
-          } `}
-        >
-          <Link href="/">
-            <motion.div {...iconAnimation}>
-              <ShoppingCartIcon className="w-7" />
-            </motion.div>
-          </Link>
-          <Link href="/">
-            <motion.div {...iconAnimation}>
-              <UserCircleIcon className="w-7" />
-            </motion.div>
-          </Link>
-        </div>
+      </div>
+      <div className={styles.productMenuMobile} ref={productMenuMobileRef}>
+        {menu.map((m, _idx) => (
+          <div
+            key={_idx}
+            onClick={() => {
+              setActiveMenu(_idx);
+            }}
+          >
+            <MenuItemMobile {...m} isActive={_idx === activeMenu} />
+          </div>
+        ))}
       </div>
     </header>
   );

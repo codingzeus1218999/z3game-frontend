@@ -1,54 +1,61 @@
 .headerContainer {
-  @apply bg-header-bg py-2 sticky top-0 z-50;
-  & .header {
-    @apply flex justify-between items-center container mx-auto px-4;
-    & .logoContainer {
-      @apply z-10;
-    }
-    & .headerRight {
-      @apply md:flex items-center gap-4 z-10;
-    }
-    & .productMenu {
-      @apply gap-4 h-[50px] relative rounded-[25px] pr-[75px] flex items-center;
-      & .magnifyContainer {
-        @apply w-[80px] h-[50px] md:w-[50px] rounded-full  cursor-pointer flex justify-center items-center absolute right-0;
-        background: var(--fire-gradient);
-        &.active {
-          @apply z-10;
-        }
+  @apply sticky top-0 z-50;
+  & .headerSubContainer {
+    @apply bg-header-bg py-2;
+    & .header {
+      @apply flex justify-between items-center container mx-auto px-4;
+      & .logoContainer {
+        @apply z-10;
       }
-      & .searchInput {
-        @apply absolute right-0 h-full rounded-[25px] px-[25px] py-1 text-white w-full;
-        background: var(--fire-gradient);
-        transform-origin: right;
-        &:focus-visible {
-          @apply outline-none;
-        }
-        &::placeholder {
-          @apply text-placeholder;
-        }
+      & .headerRight {
+        @apply md:flex items-center gap-4 z-10;
       }
-      & .crossIcon {
-        @apply absolute -right-8 cursor-pointer;
-      }
-      & .removeSearchStrIcon {
-        @apply absolute w-6 text-white right-4 cursor-pointer;
-      }
-      & .subMenu {
-        @apply absolute top-[58px] left-0 w-full hidden rounded-[10px] p-5;
-        box-shadow: 0 0 0 2000px hsla(0, 0%, 6%, 0.6);
-        backdrop-filter: blur(60px) saturate(100%);
-        &.active {
-          @apply flex flex-col gap-2;
+      & .productMenu {
+        @apply gap-4 h-[50px] relative rounded-[25px] pr-[75px] flex items-center;
+        & .magnifyContainer {
+          @apply w-[80px] h-[50px] md:w-[50px] rounded-full  cursor-pointer flex justify-center items-center absolute right-0;
+          background: var(--fire-gradient);
+          &.active {
+            @apply z-10;
+          }
         }
-        & .item {
-          @apply rounded-[7px] px-2 text-white cursor-pointer py-1 transition-all;
-          background: rgba(0, 0, 0, 0.2);
-          &:hover {
-            @apply font-semibold;
+        & .searchInput {
+          @apply absolute right-0 h-full rounded-[25px] px-[25px] py-1 text-white w-full;
+          background: var(--fire-gradient);
+          transform-origin: right;
+          &:focus-visible {
+            @apply outline-none;
+          }
+          &::placeholder {
+            @apply text-placeholder;
+          }
+        }
+        & .crossIcon {
+          @apply absolute -right-8 cursor-pointer;
+        }
+        & .removeSearchStrIcon {
+          @apply absolute w-6 text-white right-4 cursor-pointer;
+        }
+        & .subMenu {
+          @apply absolute top-[86px] md:top-[58px] left-[-100px] md:left-0 w-[300px] md:w-full hidden rounded-xl md:rounded-[10px] p-2 md:p-5;
+          box-shadow: 0 0 0 2000px hsla(0, 0%, 6%, 0.6);
+          backdrop-filter: blur(60px) saturate(100%);
+          &.active {
+            @apply flex flex-col gap-2;
+          }
+          & .item {
+            @apply rounded-[7px] px-2 text-white cursor-pointer py-1 transition-all text-sm md:text-base;
+            background: rgba(0, 0, 0, 0.2);
+            &:hover {
+              @apply font-semibold;
+            }
           }
         }
       }
     }
+  }
+  & .productMenuMobile {
+    @apply w-full flex md:hidden justify-center gap-2 items-center;
+    backdrop-filter: blur(60px) saturate(100%);
   }
 }

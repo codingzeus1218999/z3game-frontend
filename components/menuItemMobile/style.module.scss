@@ -1,0 +1,15 @@
+.container {
+  @apply flex gap-1 items-center text-gray-400 py-1 px-1 cursor-pointer text-sm;
+  & .chevrondown {
+    @apply text-gray-400 w-3 opacity-40 transition-all;
+  }
+  &:hover .chevrondown {
+    @apply opacity-100;
+  }
+  &.active {
+    @apply z-10 relative;
+    & .chevrondown {
+      @apply opacity-100;
+    }
+  }
+}
