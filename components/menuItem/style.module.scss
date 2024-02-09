@@ -6,4 +6,10 @@
   &:hover .chevrondown {
     @apply opacity-100;
   }
+  &.active {
+    @apply z-10 relative;
+    & .chevrondown {
+      @apply opacity-100;
+    }
+  }
 }

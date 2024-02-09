@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -50,37 +50,76 @@ const menu = [
   { image: images.IconNintendo, title: "Nintendo" },
 ];
 
+const subMenu = [
+  [
+    "Steam COdigo Digital",
+    "Blizzard - Battle.Net",
+    "League of Legends RP",
+    "Valorant - Riot",
+  ],
+  [
+    "Playstation Store Brasil",
+    "Playstation Store Estados Unidos",
+    "Playstation Store PT",
+    "Playstation Store UK",
+  ],
+  ["xbox game1", "xbox game2", "xbox game3", "xbox game4"],
+  ["nintendo game1", "nintendo game2", "nintendo game3", "nintendo game4"],
+];
+
 const Header = () => {
   const [isMagnifyHover, setIsMagnifyHover] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [searchStr, setSearchStr] = useState("");
+  const [activeMenu, setActiveMenu] = useState(null);
   const searchInputRef = useRef(null);
+  const productMenuRef = useRef(null);
+
+  useEffect(() => {
+    if (activeMenu !== null) {
+      document.querySelector("body").classList.add("panel-open");
+    }
+  }, [activeMenu]);
+
+  useEffect(() => {
+    document.addEventListener("click", (e) => {
+      if (!productMenuRef.current.contains(e.srcElement)) setActiveMenu(null);
+    });
+  }, []);
 
   const onMouseEnterMagnifyContainer = () => setIsMagnifyHover(true);
   const onMouseLeaveMagnifyContainer = () => setIsMagnifyHover(false);
   const onClickMagnify = () => {
     setIsOpenSearch(true);
     searchInputRef.current.focus();
+    setActiveMenu(null);
   };
   const onClickCloseSearch = () => setIsOpenSearch(false);
 
   return (
     <header className={styles.headerContainer}>
       <div className={styles.header}>
-        <div>
+        <div className={styles.logoContainer}>
           <Link href="/">
             <Image src={images.Logo} alt="logo" width={40} height={40} />
           </Link>
         </div>
-        <div className={styles.productMenu}>
+        <div className={styles.productMenu} ref={productMenuRef}>
           {menu.map((m, _idx) => (
-            <div key={_idx}>
-              <MenuItem {...m} />
+            <div
+              key={_idx}
+              onClick={() => {
+                setActiveMenu(_idx);
+              }}
+            >
+              <MenuItem {...m} isActive={_idx === activeMenu} />
             </div>
           ))}
 
           <div
-            className={styles.magnifyContainer}
+            className={`${styles.magnifyContainer} ${
+              activeMenu !== null ? styles.active : ""
+            }`}
             onMouseEnter={onMouseEnterMagnifyContainer}
             onMouseLeave={onMouseLeaveMagnifyContainer}
             onClick={onClickMagnify}
@@ -119,9 +158,21 @@ const Header = () => {
               searchInputRef.current.focus();
             }}
             className={`${styles.removeSearchStrIcon} ${
-              searchStr ? "block" : "hidden"
+              searchStr && isOpenSearch ? "block" : "hidden"
             }`}
           />
+          <div
+            className={`${styles.subMenu} ${
+              activeMenu === null ? "" : styles.active
+            }`}
+          >
+            {activeMenu !== null &&
+              subMenu[activeMenu].map((s, _idx) => (
+                <div key={_idx} className={styles.item}>
+                  {s}
+                </div>
+              ))}
+          </div>
         </div>
         <div className={styles.headerRight}>
           <Link href="/">
