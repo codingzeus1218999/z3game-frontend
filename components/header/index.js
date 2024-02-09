@@ -99,23 +99,32 @@ const Header = () => {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.header}>
-        <div className={styles.logoContainer}>
+        <div
+          className={`${styles.logoContainer} ${
+            isOpenSearch ? "hidden md:block" : "block"
+          } `}
+        >
           <Link href="/">
             <Image src={images.Logo} alt="logo" width={40} height={40} />
           </Link>
         </div>
-        <div className={styles.productMenu} ref={productMenuRef}>
+        <div
+          className={`${styles.productMenu} ${
+            isOpenSearch ? "w-[calc(100%-20px)] md:w-fit" : "w-fit"
+          }`}
+          ref={productMenuRef}
+        >
           {menu.map((m, _idx) => (
             <div
               key={_idx}
               onClick={() => {
                 setActiveMenu(_idx);
               }}
+              className="hidden md:block"
             >
               <MenuItem {...m} isActive={_idx === activeMenu} />
             </div>
           ))}
-
           <div
             className={`${styles.magnifyContainer} ${
               activeMenu !== null ? styles.active : ""
@@ -174,7 +183,11 @@ const Header = () => {
               ))}
           </div>
         </div>
-        <div className={styles.headerRight}>
+        <div
+          className={`${styles.headerRight} ${
+            isOpenSearch ? "hidden md:flex" : "flex"
+          } `}
+        >
           <Link href="/">
             <motion.div {...iconAnimation}>
               <ShoppingCartIcon className="w-7" />
