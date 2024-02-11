@@ -1,3 +1,10 @@
+import { HeroSection1, HeroSection2 } from "../components";
+
 export default function Home() {
-  return <div className="text-white font-extrabold">Home</div>;
+  return (
+    <>
+      <HeroSection1 />
+      <HeroSection2 />
+    </>
+  );
 }

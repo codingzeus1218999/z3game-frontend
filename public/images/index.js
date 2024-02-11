@@ -5,6 +5,8 @@ import IconPlaystation from "./icons/playstation.svg";
 import IconXBox from "./icons/x-box.svg";
 import IconGift from "./icons/gift.svg";
 import IconDevicePhoneMobile from "./icons/device-phone-mobile.svg";
+import BgHero1 from "./bg-hero1.jpg";
+import CarnaGamer from "./carna-gamer.png";
 
 export default {
   Logo,
@@ -14,4 +16,6 @@ export default {
   IconXBox,
   IconGift,
   IconDevicePhoneMobile,
+  BgHero1,
+  CarnaGamer,
 };
