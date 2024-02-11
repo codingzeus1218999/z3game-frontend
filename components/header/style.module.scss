@@ -3,7 +3,7 @@
   & .headerSubContainer {
     @apply bg-header-bg py-2;
     & .header {
-      @apply flex justify-between items-center container mx-auto px-4;
+      @apply flex justify-between items-center;
       & .headerRight {
         @apply lg:flex items-center gap-4;
       }

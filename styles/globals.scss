@@ -4,4 +4,24 @@
 
 :root {
   --fire-gradient: linear-gradient(10deg, #ff8000, transparent) #ff4020;
+  --fire-gradient-1: linear-gradient(10deg, #ff4020, transparent) #ff8000;
+}
+
+@layer base {
+  select:focus-visible {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .al-container {
+    @apply container mx-auto px-4;
+  }
+  .al-button-primary {
+    @apply rounded-lg text-white px-3 py-1 cursor-pointer transition-all w-fit;
+    background: var(--fire-gradient);
+    &:hover {
+      background: var(--fire-gradient-1);
+    }
+  }
 }

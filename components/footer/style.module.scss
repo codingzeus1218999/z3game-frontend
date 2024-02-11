@@ -1,0 +1,24 @@
+.footerContainer {
+  @apply bg-header-bg;
+  & .firstSection {
+    @apply py-3 flex justify-between items-center;
+    & .pages {
+      @apply flex items-center gap-3 flex-wrap justify-center;
+      & .pageLink {
+        @apply whitespace-nowrap text-sm;
+      }
+    }
+    & .socials {
+      @apply md:flex items-center gap-4 hidden;
+    }
+  }
+  & .secondSection {
+    @apply bg-body-bg;
+    & .section {
+      @apply py-3 flex md:flex-row md:items-center md:justify-between flex-col gap-2;
+    }
+  }
+  & .thirdSection {
+    @apply py-3 text-gray-400 flex flex-col md:flex-row items-center justify-between text-sm gap-4;
+  }
+}

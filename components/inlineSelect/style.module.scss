@@ -1,0 +1,12 @@
+.container {
+  @apply flex gap-4 text-white text-sm;
+  & .item {
+    @apply cursor-pointer transition-all;
+    &.active {
+      @apply text-primary;
+    }
+    &:hover {
+      @apply text-primary;
+    }
+  }
+}

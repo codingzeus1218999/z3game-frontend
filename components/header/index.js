@@ -118,7 +118,7 @@ const Header = () => {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerSubContainer}>
-        <div className={styles.header}>
+        <div className={`${styles.header} al-container`}>
           <div className={`${isOpenSearch ? "hidden lg:block" : "block"}`}>
             <Link href="/">
               <Image src={images.Logo} alt="logo" width={40} height={40} />
