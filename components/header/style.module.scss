@@ -52,7 +52,7 @@
     }
   }
   & .productMenuMobile {
-    @apply w-full flex lg:hidden justify-center gap-2 items-center flex-wrap;
+    @apply w-full flex lg:hidden justify-center gap-1 items-center flex-wrap;
     backdrop-filter: blur(60px) saturate(100%);
   }
 }

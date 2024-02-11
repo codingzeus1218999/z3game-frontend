@@ -46,11 +46,11 @@ const searchInputAnimation = {
 
 const menu = [
   { image: images.IconComputerDesktop, title: "PC" },
-  { image: images.IconPlaystation, title: "Playstatiion" },
+  { image: images.IconPlaystation, title: "PlayStation" },
   { image: images.IconXBox, title: "Xbox" },
   { image: images.IconNintendo, title: "Nintendo" },
   { image: images.IconDevicePhoneMobile, title: "Mobile" },
-  { image: images.IconGift, title: "Gift" },
+  { image: images.IconGift, title: "Gift Cards" },
 ];
 
 const subMenu = [
@@ -163,7 +163,7 @@ const Header = () => {
               ref={searchInputRef}
               value={searchStr}
               onChange={({ target }) => setSearchStr(target.value)}
-              placeholder="Minecraft, RPG, multiplayer..."
+              placeholder="Minecraft, Playstation Gift Card, Valorant Points..."
             ></motion.input>
             <motion.div
               {...iconAnimation}
