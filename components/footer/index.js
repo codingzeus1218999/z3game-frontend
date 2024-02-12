@@ -107,7 +107,7 @@ export default function Footer() {
       <div className={styles.secondSection}>
         <div className={`${styles.section} al-container`}>
           <div className="flex items-center gap-6">
-            <Link href="/" className="hidden lg:block">
+            <Link href="/" className="hidden md:block">
               <Image src={images.Logo1} height={40} alt="logo" />
             </Link>
             <div className="flex flex-row justify-between md:flex-col flex-1">
