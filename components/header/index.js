@@ -83,12 +83,6 @@ const Header = () => {
   const subMenuRef = useRef(null);
 
   useEffect(() => {
-    if (activeMenu !== null) {
-      document.querySelector("body").classList.add("panel-open");
-    }
-  }, [activeMenu]);
-
-  useEffect(() => {
     subMenuRef.current.style.top = `${
       productMenuMobileRef.current.clientHeight + 58
     }px`;
@@ -134,7 +128,7 @@ const Header = () => {
               <div
                 key={_idx}
                 onClick={() => {
-                  setActiveMenu(_idx);
+                  setActiveMenu(_idx === activeMenu ? null : _idx);
                 }}
                 className="hidden lg:block"
               >
@@ -223,7 +217,7 @@ const Header = () => {
           <div
             key={_idx}
             onClick={() => {
-              setActiveMenu(_idx);
+              setActiveMenu(_idx === activeMenu ? null : _idx);
             }}
           >
             <MenuItemMobile {...m} isActive={_idx === activeMenu} />

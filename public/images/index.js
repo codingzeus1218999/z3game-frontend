@@ -1,4 +1,5 @@
 import Logo from "./logo.svg";
+import Logo1 from "./logo1.svg";
 import IconComputerDesktop from "./icons/computer-desktop.svg";
 import IconNintendo from "./icons/nintendo.svg";
 import IconPlaystation from "./icons/playstation.svg";
@@ -10,6 +11,7 @@ import CarnaGamer from "./carna-gamer.png";
 
 export default {
   Logo,
+  Logo1,
   IconComputerDesktop,
   IconNintendo,
   IconPlaystation,

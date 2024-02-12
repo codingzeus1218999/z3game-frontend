@@ -88,8 +88,8 @@ export default function Footer() {
       <div className={styles.secondSection}>
         <div className={`${styles.section} al-container`}>
           <div className="flex items-center gap-6">
-            <Link href="/" className="hidden md:block">
-              <Image src={images.Logo} width={40} height={40} alt="logo" />
+            <Link href="/" className="hidden lg:block">
+              <Image src={images.Logo1} height={40} alt="logo" />
             </Link>
             <div className="flex flex-row justify-between md:flex-col flex-1">
               <InlineSelect
@@ -110,7 +110,9 @@ export default function Footer() {
             <div className="al-button-primary flex items-center gap-3">
               <FontAwesomeIcon icon={faDownload} />
               <div>
-                <p className="font-bold">Download Z3G Galaxy</p>
+                <p className="font-bold whitespace-nowrap">
+                  Download Z3G Galaxy
+                </p>
                 <p className="text-xs font-bold">for Windows</p>
               </div>
             </div>
