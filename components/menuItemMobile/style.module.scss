@@ -1,5 +1,5 @@
 .container {
-  @apply flex gap-1 items-center text-gray-400 py-1 px-1 cursor-pointer text-sm;
+  @apply flex gap-[2px] items-center text-gray-400 py-1 px-1 cursor-pointer text-[10px];
   & .chevrondown {
     @apply text-gray-400 w-3 opacity-40 transition-all;
   }
