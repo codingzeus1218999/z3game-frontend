@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import variables from "@/styles/variables.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faInstagramSquare,
   faFacebookSquare,
-  faTwitch,
+  faWhatsappSquare,
   faTwitter,
+  faTiktok,
+  faYoutubeSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
@@ -16,28 +19,24 @@ import InlineSelect from "../inlineSelect";
 import { useState } from "react";
 
 const linkPages = [
-  { link: "/", title: "Redeem code" },
+  { link: "/", title: "Buying Jorney" },
   { link: "/", title: "Contact us" },
-  { link: "/", title: "Career opportunities" },
+  { link: "/", title: "F.A.Q." },
   { link: "/", title: "Submit your game" },
   { link: "/", title: "Blog" },
 ];
 
 const linkPagesSecond = [
+  { link: "/", title: "About Us" },
   { link: "/", title: "Legal" },
   { link: "/", title: "Privacy policy" },
-  { link: "/", title: "Our thanks" },
   { link: "/", title: "Cookie Declaration" },
-  { link: "/", title: "Imprint" },
 ];
 
 const languages = [
   { value: "english", title: "English" },
-  { value: "deutsch", title: "Deutsch" },
-  { value: "franch", title: "Franch" },
-  { value: "polski", title: "Polski" },
-  { value: "russian", title: "Russian" },
-  { value: "chinese", title: "Chinese" },
+  { value: "portuguese", title: "Português" },
+  { value: "spanish", title: "Español" },
 ];
 
 const currencies = [
@@ -70,7 +69,17 @@ export default function Footer() {
         <div className={styles.socials}>
           <Link href="/">
             <motion.div {...pageLinkAnimation}>
+              <FontAwesomeIcon icon={faInstagramSquare} size="lg" />
+            </motion.div>
+          </Link>
+          <Link href="/">
+            <motion.div {...pageLinkAnimation}>
               <FontAwesomeIcon icon={faFacebookSquare} size="lg" />
+            </motion.div>
+          </Link>
+          <Link href="/">
+            <motion.div {...pageLinkAnimation}>
+              <FontAwesomeIcon icon={faTiktok} size="lg" />
             </motion.div>
           </Link>
           <Link href="/">
@@ -80,7 +89,17 @@ export default function Footer() {
           </Link>
           <Link href="/">
             <motion.div {...pageLinkAnimation}>
-              <FontAwesomeIcon icon={faTwitch} size="lg" />
+              <FontAwesomeIcon icon={faWhatsappSquare} size="lg" />
+            </motion.div>
+          </Link>
+          <Link href="/">
+            <motion.div {...pageLinkAnimation}>
+              <FontAwesomeIcon icon={faYoutubeSquare} size="lg" />
+            </motion.div>
+          </Link>
+          <Link href="/">
+            <motion.div {...pageLinkAnimation}>
+              <FontAwesomeIcon icon={faWhatsappSquare} size="lg" />
             </motion.div>
           </Link>
         </div>
@@ -110,16 +129,24 @@ export default function Footer() {
             <div className="al-button-primary flex items-center gap-3">
               <FontAwesomeIcon icon={faDownload} />
               <div>
-                <p className="font-bold whitespace-nowrap">
-                  Download Z3G Galaxy
-                </p>
-                <p className="text-xs font-bold">for Windows</p>
+                <p className="font-bold">Download Z3G App</p>
+                <p className="text-xs font-bold">for mobile</p>
               </div>
             </div>
             <div className="flex items-center gap-4 md:hidden">
               <Link href="/">
                 <motion.div {...pageLinkAnimation}>
+                  <FontAwesomeIcon icon={faInstagramSquare} size="lg" />
+                </motion.div>
+              </Link>
+              <Link href="/">
+                <motion.div {...pageLinkAnimation}>
                   <FontAwesomeIcon icon={faFacebookSquare} size="lg" />
+                </motion.div>
+              </Link>
+              <Link href="/">
+                <motion.div {...pageLinkAnimation}>
+                  <FontAwesomeIcon icon={faTiktok} size="lg" />
                 </motion.div>
               </Link>
               <Link href="/">
@@ -129,7 +156,12 @@ export default function Footer() {
               </Link>
               <Link href="/">
                 <motion.div {...pageLinkAnimation}>
-                  <FontAwesomeIcon icon={faTwitch} size="lg" />
+                  <FontAwesomeIcon icon={faYoutubeSquare} size="lg" />
+                </motion.div>
+              </Link>
+              <Link href="/">
+                <motion.div {...pageLinkAnimation}>
+                  <FontAwesomeIcon icon={faWhatsappSquare} size="lg" />
                 </motion.div>
               </Link>
             </div>
