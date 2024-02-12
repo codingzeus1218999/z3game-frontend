@@ -1,6 +1,30 @@
 .container {
-  .swiperSlide {
-    @apply h-[420px];
-    background-size: auto;
+  & .swiperSlide {
+    @apply h-[300px] sm:h-[420px] lg:h-[500px] flex flex-col justify-end;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    & .attributes {
+      @apply max-w-[1280px] w-full flex justify-between lg:items-center mx-auto p-2 md:p-4 relative flex-col gap-3 lg:flex-row;
+      & .title {
+        @apply text-white text-lg md:text-2xl;
+      }
+      & .device {
+        @apply text-white text-xs md:text-sm;
+      }
+      & .reducedPro {
+        @apply text-lg p-1 md:text-3xl font-bold md:p-2 text-white bg-red-700;
+      }
+      & .originalPrice {
+        @apply text-white text-sm;
+        text-decoration: line-through;
+      }
+      & .price {
+        @apply text-primary md:text-2xl font-bold text-lg;
+      }
+      & .date {
+        @apply absolute text-sm font-bold p-1 text-white bg-purple-600 top-[-28px];
+      }
+    }
   }
 }

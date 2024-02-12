@@ -24,4 +24,27 @@
       background: var(--fire-gradient-1);
     }
   }
+  .al-button-secondary {
+    @apply text-white uppercase cursor-pointer transition-all w-fit px-2 sm:px-8 sm:py-2 font-semibold sm:font-bold text-sm sm:text-3xl;
+    background: var(--fire-gradient);
+    &:hover {
+      background: var(--fire-gradient-1);
+    }
+  }
+  .al-button-swiper-navigator {
+    @apply text-white hover:text-primary transition-all;
+    &::after {
+      font-size: 25px;
+      font-weight: bolder;
+    }
+  }
+  .al-swiper-pagination {
+    @apply bottom-[15px] #{!important};
+    & .swiper-pagination-bullet {
+      @apply w-3 h-3 mx-2 #{!important};
+      &.swiper-pagination-bullet-active {
+        @apply bg-primary;
+      }
+    }
+  }
 }
