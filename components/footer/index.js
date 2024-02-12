@@ -185,7 +185,7 @@ export default function Footer() {
           </p>
         </div>
         <div className="font-semibold whitespace-nowrap">
-          Part of <span className="text-white font-extrabold">Z3 Game</span>{" "}
+          Part of <span className="text-white font-extrabold">Z3 games </span>
           group.
         </div>
       </div>
