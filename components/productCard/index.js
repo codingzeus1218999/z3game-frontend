@@ -60,8 +60,8 @@ export default function ProductCard({ product }) {
           <div className={styles.price}>
             <span>
               <FontAwesomeIcon icon={faCartPlus} />
+              &nbsp;
             </span>
-            &nbsp;
             {product.unit}&nbsp;
             {product.price}
           </div>

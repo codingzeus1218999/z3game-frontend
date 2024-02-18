@@ -1,0 +1,31 @@
+.container {
+  @apply cursor-pointer rounded-sm overflow-hidden w-full h-[187px] relative;
+  & img {
+    @apply w-full h-full object-cover;
+  }
+  & .btnGroup {
+    @apply absolute bottom-2 right-2 flex gap-1 items-center text-white font-bold text-sm;
+    & .reducedPro {
+      @apply bg-red-700 p-1 rounded-sm;
+    }
+    & .price {
+      @apply bg-gray-600 p-1 rounded-sm text-center transition-all;
+      & span {
+        @apply hidden;
+      }
+    }
+    & .favourite {
+      @apply p-1 bg-[#263241b3] rounded-sm transition-all w-7 text-center;
+    }
+  }
+  &:hover {
+    & .btnGroup {
+      & .price {
+        @apply bg-primary;
+        & span {
+          @apply inline-block;
+        }
+      }
+    }
+  }
+}
