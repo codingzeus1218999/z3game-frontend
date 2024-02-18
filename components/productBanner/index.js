@@ -14,7 +14,9 @@ export default function ProductBanner({ info }) {
     <div className={styles.container}>
       <img src={info.image} alt="ad game" />
       <div className={styles.btnGroup}>
-        <div className={styles.reducedPro}>{info.reducedPro} %</div>
+        {info.reducedPro && (
+          <div className={styles.reducedPro}>{info.reducedPro} %</div>
+        )}
         <div className={styles.price}>
           <span>
             <FontAwesomeIcon icon={faCartPlus} />

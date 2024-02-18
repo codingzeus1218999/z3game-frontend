@@ -56,7 +56,9 @@ export default function ProductCard({ product }) {
         </div>
         <p className={styles.toendingtime}>{toEndingTime}</p>
         <div className={styles.priceContainer}>
-          <div className={styles.reducedPro}>{product.reducedPro} %</div>
+          {product.reducedPro && (
+            <div className={styles.reducedPro}>{product.reducedPro} %</div>
+          )}
           <div className={styles.price}>
             <span>
               <FontAwesomeIcon icon={faCartPlus} />

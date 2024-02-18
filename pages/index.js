@@ -1,3 +1,4 @@
+import PopularList from "@/components/popularList";
 import { HeroSection1, HeroSection2, ProductList } from "../components";
 
 const productsList = [
@@ -458,6 +459,8 @@ const productsList = [
   },
 ];
 
+const popularList = [];
+
 export default function Home() {
   return (
     <>
@@ -467,6 +470,9 @@ export default function Home() {
         {productsList.map((pl, _idx) => (
           <ProductList list={pl} key={_idx} />
         ))}
+      </div>
+      <div className="al-container my-10">
+        <PopularList list={popularList} />
       </div>
     </>
   );
