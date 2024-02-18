@@ -82,22 +82,27 @@ const Header = () => {
   const productMenuMobileRef = useRef(null);
   const subMenuRef = useRef(null);
 
-  useEffect(() => {
+  const calculateSubMenuTop = () => {
     subMenuRef.current.style.top = `${
       productMenuMobileRef.current.clientHeight + 58
     }px`;
-    window.addEventListener("resize", (e) => {
-      subMenuRef.current.style.top = `${
-        productMenuMobileRef.current.clientHeight + 58
-      }px`;
-    });
-    document.addEventListener("click", (e) => {
-      if (
-        !productMenuRef.current.contains(e.srcElement) &&
-        !productMenuMobileRef.current.contains(e.srcElement)
-      )
-        setActiveMenu(null);
-    });
+  };
+  const onClickProductMenu = (e) => {
+    if (
+      !productMenuRef.current.contains(e.srcElement) &&
+      !productMenuMobileRef.current.contains(e.srcElement)
+    )
+      setActiveMenu(null);
+  };
+
+  useEffect(() => {
+    calculateSubMenuTop();
+    window.addEventListener("resize", calculateSubMenuTop);
+    document.addEventListener("click", onClickProductMenu);
+    return () => {
+      window.removeEventListener("resize", calculateSubMenuTop);
+      document.removeEventListener("click", onClickProductMenu);
+    };
   }, []);
 
   const onMouseEnterMagnifyContainer = () => setIsMagnifyHover(true);

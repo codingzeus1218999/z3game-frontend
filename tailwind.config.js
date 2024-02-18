@@ -12,6 +12,7 @@ module.exports = {
         "body-bg": "#2c2c2c",
         "header-bg": "#333333",
         placeholder: "#ffb486",
+        "product-bg": "#263241",
       },
     },
   },

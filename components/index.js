@@ -5,6 +5,9 @@ import MenuItemMobile from "./menuItemMobile";
 import InlineSelect from "./inlineSelect";
 import HeroSection1 from "./heroSection1";
 import HeroSection2 from "./heroSection2";
+import ProductList from "./productList";
+import ProductCard from "./productCard";
+import ProductBanner from "./productBanner";
 
 export {
   Header,
@@ -14,4 +17,7 @@ export {
   InlineSelect,
   HeroSection1,
   HeroSection2,
+  ProductList,
+  ProductCard,
+  ProductBanner,
 };
