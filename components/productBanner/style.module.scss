@@ -15,7 +15,7 @@
       }
     }
     & .favourite {
-      @apply p-1 bg-[#263241b3] rounded-sm transition-all w-7 text-center;
+      @apply p-1 bg-favourite-bg rounded-sm transition-all w-7 text-center;
     }
   }
   &:hover {

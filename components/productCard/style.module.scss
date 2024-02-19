@@ -6,7 +6,7 @@
       @apply w-full h-full object-cover;
     }
     & .favourite {
-      @apply absolute bottom-0 right-0 p-2 text-white bg-[#263241b3] rounded-sm transition-all;
+      @apply absolute bottom-0 right-0 p-2 text-white bg-favourite-bg rounded-sm transition-all;
       line-height: 1;
     }
   }
@@ -16,18 +16,18 @@
       @apply font-bold;
     }
     & .device {
-      @apply text-gray-600;
+      @apply text-card-text flex gap-2 items-center mt-2;
     }
     & .toendingtime {
-      @apply text-gray-600 text-xs mt-3 font-semibold;
+      @apply text-card-text text-xs mt-3 font-semibold;
     }
     & .priceContainer {
       @apply flex gap-2 font-bold mt-3;
       & .reducedPro {
-        @apply bg-red-700 p-1 rounded-sm;
+        @apply bg-reduced-bg p-1 rounded-sm;
       }
       & .price {
-        @apply bg-gray-600 p-1 rounded-sm flex-1 text-center transition-all;
+        @apply bg-price-bg p-1 rounded-sm flex-1 text-center transition-all;
         & span {
           @apply hidden;
         }
@@ -35,7 +35,7 @@
     }
   }
   &:hover {
-    @apply bg-slate-800;
+    @apply bg-product-hover-bg;
     & .image {
       & .favourite {
         @apply opacity-100;

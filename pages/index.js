@@ -10,7 +10,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -21,7 +21,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -32,7 +32,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -43,7 +43,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -54,7 +54,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -72,7 +72,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -83,7 +83,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -94,7 +94,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -105,7 +105,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -116,7 +116,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -141,7 +141,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -152,7 +152,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -163,7 +163,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -174,7 +174,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -185,7 +185,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -203,7 +203,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -214,7 +214,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -225,7 +225,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -236,7 +236,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -247,7 +247,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -272,7 +272,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -283,7 +283,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -294,7 +294,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -305,7 +305,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -316,7 +316,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -341,7 +341,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -352,7 +352,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -363,7 +363,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -374,7 +374,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -385,7 +385,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -403,7 +403,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: null,
         price: 8.99,
@@ -414,7 +414,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -425,7 +425,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: null,
         price: 8.99,
@@ -436,7 +436,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: -85,
         price: 8.99,
@@ -447,7 +447,7 @@ const productsList = [
         image:
           "https://assets.nuuvem.com/image/upload/t_banner_big/v1/products/5d7687de85f2366285c50da5/banners/kvrqeub8ush7mxsq0m2e.jpg",
         title: "Borderlands 3",
-        device: "windows",
+        device: ["windows", "apple", "android"],
         endtime: "2024-03-10 08:00:00",
         reducedPro: null,
         price: 8.99,
@@ -459,7 +459,116 @@ const productsList = [
   },
 ];
 
-const popularList = [];
+const popularList = [
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/5ca6bc3888102446b72520d5/boxshots/yzwlnzemzptnwdd6fixv.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: true,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/557dbc0c69702d0a9c09ce00/boxshots/zekhnn4udnnfqmnaosx0.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: true,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+  {
+    image:
+      "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/55f719d169702d7d08002180/boxshots/aaw7ryxzjhpjzjpvldx8.jpg",
+    title: "GTA Online: Bull Shark Cash Card",
+    device: ["windows", "android", "apple"],
+    unit: "USD$",
+    price: 9.99,
+    favourite: false,
+  },
+];
 
 export default function Home() {
   return (

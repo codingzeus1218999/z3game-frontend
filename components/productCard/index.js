@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWindows } from "@fortawesome/free-brands-svg-icons";
+import {
+  faAndroid,
+  faApple,
+  faWindows,
+} from "@fortawesome/free-brands-svg-icons";
 import styles from "./style.module.scss";
 import { calculateDurationFormat } from "utils/datetime";
 import {
@@ -48,11 +52,20 @@ export default function ProductCard({ product }) {
       <div className={styles.infoContainer}>
         <p className={styles.title}>{product.title}</p>
         <div className={styles.device}>
-          {product.device === "windows" ? (
-            <FontAwesomeIcon icon={faWindows} />
-          ) : (
-            ""
-          )}
+          {product.device.map((d, _idx) => (
+            <FontAwesomeIcon
+              key={_idx}
+              icon={
+                d === "windows"
+                  ? faWindows
+                  : d === "android"
+                  ? faAndroid
+                  : d === "apple"
+                  ? faApple
+                  : null
+              }
+            />
+          ))}
         </div>
         <p className={styles.toendingtime}>{toEndingTime}</p>
         <div className={styles.priceContainer}>
