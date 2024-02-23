@@ -1,9 +1,12 @@
 .container {
   & .swiperSlide {
-    @apply h-[300px] sm:h-[420px] lg:h-[500px] flex flex-col justify-end;
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
+    @apply h-[500px] md:h-[400px] flex flex-col justify-end;
+    // background-repeat: no-repeat;
+    // background-position: top center;
+    // background-size: cover;
+    & img {
+      @apply w-full h-full object-cover absolute -z-10;
+    }
     & .attributes {
       @apply max-w-[1280px] w-full flex justify-between lg:items-center mx-auto p-2 md:p-4 relative flex-col gap-3 lg:flex-row;
       & .title {
