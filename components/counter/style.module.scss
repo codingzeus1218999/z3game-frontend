@@ -1,0 +1,9 @@
+.container {
+  @apply flex items-center;
+  & .button {
+    @apply border border-border h-8 w-8 flex justify-center items-center cursor-pointer;
+  }
+  & .input {
+    @apply h-8 bg-transparent border-border border-y text-center;
+  }
+}

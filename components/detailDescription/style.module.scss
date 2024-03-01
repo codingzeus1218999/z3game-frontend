@@ -1,0 +1,9 @@
+.container {
+  @apply text-card-text;
+  & h2 {
+    @apply text-xl font-bold mb-3;
+  }
+  & p {
+    @apply mb-4;
+  }
+}

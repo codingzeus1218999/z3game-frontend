@@ -20,6 +20,8 @@ module.exports = {
         "price-bg": "#4b5563",
         "index-bg": "#b91c1c",
         "buy-bg": "#b91c1c",
+        "card-bg": "#cbd5e1",
+        border: "#263241",
       },
     },
   },

@@ -1,0 +1,15 @@
+.container {
+  @apply border border-dotted border-border rounded-md p-2 transition-all text-card-text;
+  & .title {
+    @apply font-bold text-sm;
+  }
+  & .price {
+    @apply font-extrabold;
+  }
+  & .description {
+    @apply text-xs mt-2;
+  }
+  &:hover {
+    @apply border-primary border-solid text-black;
+  }
+}

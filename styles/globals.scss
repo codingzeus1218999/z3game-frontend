@@ -11,6 +11,9 @@
   select:focus-visible {
     @apply outline-none;
   }
+  input:focus-visible {
+    @apply outline-none;
+  }
 }
 
 @layer components {
@@ -45,6 +48,13 @@
       &.swiper-pagination-bullet-active {
         @apply bg-primary;
       }
+    }
+  }
+  .image-gallery-thumbnail {
+    &,
+    &.active,
+    &:hover {
+      @apply rounded-xl overflow-hidden;
     }
   }
 }

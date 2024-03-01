@@ -1,0 +1,75 @@
+.container {
+  @apply flex flex-col gap-5;
+  & .section1 {
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-5;
+    & .languagesContainer {
+      @apply rounded-lg p-4 bg-card-bg cursor-pointer transition-all text-sm;
+      &:hover {
+        @apply shadow-lg;
+      }
+      & .title {
+        @apply mb-3;
+      }
+      & .languageInfos {
+        @apply flex;
+        & .language {
+          @apply w-[100px];
+        }
+        & .info {
+          @apply grid grid-cols-3 flex-1;
+          & div {
+            @apply text-center;
+            &.icon {
+              @apply text-primary;
+            }
+          }
+        }
+      }
+    }
+    & .classificationContainer {
+      @apply rounded-lg p-4 bg-card-bg cursor-pointer transition-all text-sm;
+      &:hover {
+        @apply shadow-lg;
+      }
+      & .title {
+        @apply text-lg font-semibold;
+      }
+      & .number {
+        @apply text-3xl font-extrabold text-white flex justify-center items-center w-[50px] h-[50px] bg-primary rounded-md;
+      }
+      & .description {
+        @apply mt-3 text-sm;
+      }
+    }
+    & .detailsContainer {
+      @apply rounded-lg p-4 bg-card-bg cursor-pointer transition-all text-sm;
+      &:hover {
+        @apply shadow-lg;
+      }
+      & .detail {
+        @apply flex gap-2;
+        & .label {
+          @apply uppercase;
+        }
+        & .value {
+          @apply text-primary font-semibold;
+        }
+      }
+    }
+  }
+  & .requirementsContainer {
+    @apply rounded-lg p-4 bg-card-bg cursor-pointer transition-all text-sm grid grid-cols-1 sm:grid-cols-2 gap-3;
+    &:hover {
+      @apply shadow-lg;
+    }
+    & .title {
+      @apply uppercase text-xs mb-2;
+    }
+    & .req {
+      @apply flex gap-3;
+      & .value {
+        @apply text-primary font-semibold;
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.container {
+  & .title {
+    @apply font-bold text-2xl mb-6 text-card-text;
+  }
+  & .ratingContainer {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-3 mb-5;
+    & .section1 {
+      @apply rounded-lg p-4 bg-card-bg cursor-pointer transition-all;
+      &:hover {
+        @apply shadow-md;
+      }
+      & .score {
+        @apply text-3xl font-extrabold text-center;
+      }
+      & .ratings {
+        @apply mt-5 flex justify-center;
+        & svg {
+          @apply inline;
+        }
+      }
+      & .rating {
+        @apply text-sm text-center mt-4;
+      }
+    }
+    & .section2 {
+      @apply rounded-lg p-4 bg-card-bg cursor-pointer transition-all md:col-span-2 flex flex-col justify-center gap-5;
+      &:hover {
+        @apply shadow-md;
+      }
+      & .starGroup {
+        @apply flex flex-col gap-3;
+        & .starSet {
+          @apply flex gap-4 items-center justify-between;
+          & .title {
+            @apply text-sm font-bold mb-0;
+          }
+          & .bar {
+            @apply flex-1 h-3;
+            & .inner {
+              @apply bg-primary h-full rounded-md;
+            }
+          }
+          & .count {
+            @apply text-sm;
+          }
+        }
+      }
+      & .description {
+        @apply text-sm;
+        & span {
+          @apply font-bold;
+        }
+      }
+    }
+  }
+  & .swiperContainer {
+    @apply relative;
+    & .reviewContainer {
+      @apply bg-card-bg rounded-md p-4;
+      & .rating {
+        @apply flex items-center gap-4;
+        & span {
+          @apply leading-none;
+        }
+        & svg {
+          @apply inline-block;
+        }
+        & .ratingScore {
+          @apply text-sm font-bold;
+        }
+      }
+      & .title {
+        @apply text-lg font-bold mt-5 mb-0;
+      }
+      & .info {
+        @apply mt-1 flex gap-4;
+        & .time {
+          @apply font-bold;
+        }
+      }
+      & .content {
+        @apply text-sm mt-3;
+      }
+      & .helpful {
+        @apply mt-3 font-bold text-card-text cursor-pointer;
+      }
+      & .value {
+        @apply flex items-center gap-5 mt-4 text-sm;
+        & .valueUnit {
+          @apply flex gap-2 items-center cursor-pointer font-bold;
+        }
+        & .report {
+          @apply underline cursor-pointer;
+        }
+      }
+    }
+  }
+}

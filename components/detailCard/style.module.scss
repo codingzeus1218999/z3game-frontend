@@ -1,0 +1,42 @@
+.container {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-10;
+  & .galleryContainer {
+    & .originalClass {
+      & img {
+        @apply rounded-2xl;
+      }
+    }
+    & .thumbnailClass {
+      & img {
+        @apply rounded-lg;
+      }
+    }
+  }
+  & .cardContainer {
+    @apply rounded-lg p-4 bg-card-bg cursor-pointer transition-all flex flex-col gap-3;
+    &:hover {
+      @apply shadow-lg;
+    }
+    & .title {
+      @apply text-xl font-semibold;
+    }
+    & .type {
+      @apply text-primary text-xs;
+    }
+    & .price {
+      @apply text-primary text-lg font-bold;
+    }
+    & .priceDescription {
+      @apply text-sm;
+    }
+    & .premiumContainer {
+      @apply grid grid-cols-1 md:grid-cols-3 gap-1;
+    }
+    & .descriptionLabel {
+      @apply text-xs;
+    }
+    & .description {
+      @apply text-sm;
+    }
+  }
+}
